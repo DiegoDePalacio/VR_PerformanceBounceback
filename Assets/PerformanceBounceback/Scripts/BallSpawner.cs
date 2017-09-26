@@ -10,8 +10,8 @@ public class Ball
     public Rigidbody rigidBody = null;
 }
 
-public class BallSpawner : MonoBehaviour {
-
+public class BallSpawner : MonoBehaviour
+{
     public static BallSpawner current;
 
     // If the number of ball is high, the manual assignation of the balls should be replaced
