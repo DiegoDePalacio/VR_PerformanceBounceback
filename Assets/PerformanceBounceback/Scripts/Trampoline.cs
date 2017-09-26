@@ -9,7 +9,6 @@ using UnityEditor.SceneManagement;
 
 public class Trampoline : MonoBehaviour
 {
-    public ParticleSystem pSystem = null;
     public GameManager scoreScript = null;
 
 #if UNITY_EDITOR
@@ -25,19 +24,17 @@ public class Trampoline : MonoBehaviour
     void Start ()
     {
         Assert.IsNotNull( scoreScript, "The score script in a Trampoline instance is not yet assigned!" );
-        Assert.IsNotNull( pSystem, "The particle system in a Trampoline instance is not yet assigned!" );
     }
 
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Throwable"))
         {
+            //Particle effect
+            ParticleSystemSpawner.current.SpawnParticleSystem( col.contacts[0].point );
+
             //Score Point
             scoreScript.AddOneToTheScore();
-            //Particle effect
-            pSystem.Play();
-
-            Debug.Log("Trampoline Hit");
         }
     }
 }
