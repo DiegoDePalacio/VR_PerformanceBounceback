@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 #if UNITY_EDITOR
-using UnityEditor;
+using UnityEditor.SceneManagement;
 #endif
 
 public class Trampoline : MonoBehaviour
@@ -17,7 +17,7 @@ public class Trampoline : MonoBehaviour
     private void AssignTheScoreScript()
     {
         scoreScript = FindObjectOfType<GameManager>();
-        EditorUtility.SetDirty( this );
+        EditorSceneManager.MarkSceneDirty( EditorSceneManager.GetActiveScene() );
     }
 #endif
 
