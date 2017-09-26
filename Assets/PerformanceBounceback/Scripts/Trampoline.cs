@@ -20,12 +20,11 @@ public class Trampoline : MonoBehaviour {
         if (col.gameObject.CompareTag("Throwable"))
         {
             //Score Point
-            scoreScript.score++;
+            scoreScript.AddOneToTheScore();
             //Particle effect
             pSystem.Play();
 
             Debug.Log("Trampoline Hit");
         }
-
     }
 }

@@ -16,11 +16,13 @@ public class Score : MonoBehaviour
     {
         Assert.IsNotNull( gameManager, "GameManager is not yet assigned!" );
         Assert.IsNotNull( text, "The Score text is not yet assigned!" );
+
+        gameManager.OnScoreChanged -= UpdateScore;
+        gameManager.OnScoreChanged += UpdateScore;
 	}
 	
-	// Update is called once per frame
-	void Update ()
+	private void UpdateScore( int score )
     {
-        text.text = "Score: " + gameManager.score.ToString();
+        text.text = "Score: " + score.ToString();
 	}
 }
