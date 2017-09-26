@@ -8,6 +8,12 @@ public class Trampoline : MonoBehaviour {
     public ParticleSystem pSystem = null;
     public GameManager scoreScript = null;
 
+    [ContextMenu( "Assign the score script" )]
+    private void AssignTheScoreScript()
+    {
+        scoreScript = FindObjectOfType<GameManager>();
+    }
+
 	// Use this for initialization
 	void Start ()
     {
