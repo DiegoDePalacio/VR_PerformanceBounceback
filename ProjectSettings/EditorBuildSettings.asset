@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/PerformanceBounceback/Scenes/Scene0.unity
+    guid: b7f6133459f1efd489e36dde7109102e
