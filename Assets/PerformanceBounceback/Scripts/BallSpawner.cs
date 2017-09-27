@@ -33,6 +33,13 @@ public class BallSpawner : MonoBehaviour
     public Ball GetPooledBall()
     {
         ballPoolNum = ( ballPoolNum + 1 ) % pooledBalls.Count;
+
+        // If the ball is in the player hands, then take another ball from the pool instead
+        if ( pooledBalls[ballPoolNum].rigidBody.isKinematic )
+        {
+            ballPoolNum = ( ballPoolNum + 1 ) % pooledBalls.Count;
+        }
+
         return pooledBalls[ballPoolNum];
     }
    	
